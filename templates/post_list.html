@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+            {% for i in object_list %}
+            <li class='post'>
+                <h2><a href="/posts/{{ i.pk }}/">{{ i.title }}</a></h2>
+                <p class="post-description">{{ i.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+</body>
+</html>

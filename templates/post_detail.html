@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Post</title>
+</head>
+<body>
+<div>
+    <h2>{{ object.title}}</h2>
+    <p>{{ object.description }}</p>
+    <img src="{{ object.image.url }}" alt="">
+    <br><br>
+    Created date:<p>{{ object.created_data }}</p>
+    Updated date:<p>{{ object.updated_data }}</p>
+</div>
+<div>
+    <h2>Comments: </h2>
+    <ul>
+        {% for i in post_comment.all %}
+        <li>
+            <p> {{ i.text}}</p>
+            <p> {{ i.created_data }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/post/{{object.id}}/update/">Update?</a>
+    <a href="/post/{{object.id}}/update/">Delete?</a>
+    <a href="/add-comment/">Add Comment</a>
+</div>
+</body>
+</html>
